@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exe_1", "MySolutionsToLexiconExercises\Exe_1.csproj", "{FAC76BB8-32BA-449F-A2E6-25C9C347D55A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exe_2", "Exe_2\Exe_2.csproj", "{05514AD6-B31D-4F47-BD49-1779755FEC86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exe_3", "Exe_3\Exe_3.csproj", "{F50AFA9D-77D2-4BD7-921B-4ACC5EF67BE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAC76BB8-32BA-449F-A2E6-25C9C347D55A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC76BB8-32BA-449F-A2E6-25C9C347D55A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC76BB8-32BA-449F-A2E6-25C9C347D55A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC76BB8-32BA-449F-A2E6-25C9C347D55A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05514AD6-B31D-4F47-BD49-1779755FEC86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05514AD6-B31D-4F47-BD49-1779755FEC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05514AD6-B31D-4F47-BD49-1779755FEC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05514AD6-B31D-4F47-BD49-1779755FEC86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F50AFA9D-77D2-4BD7-921B-4ACC5EF67BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F50AFA9D-77D2-4BD7-921B-4ACC5EF67BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F50AFA9D-77D2-4BD7-921B-4ACC5EF67BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F50AFA9D-77D2-4BD7-921B-4ACC5EF67BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F6CDC40-F2F0-4BC2-B829-D653F6C910FE}
+	EndGlobalSection
+EndGlobal
