@@ -17,5 +17,9 @@
         {
             return $"{base.Stats()} {Breed}";
         }
+        public string GenerateDogString()
+        {
+            return "A string about dogs";
+        }
     }
 }

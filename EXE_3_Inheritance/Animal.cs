@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Exe_3_Inheritance
 {
     /// <summary>
+    /// CA 27 min in i Video 3 OOP
     /// Abstract class is something that can have abstract methods and ordinary methods (with implementation),
     /// you can have properties and constructors but you cannot insantiate an abstract class.
     /// You can only inherit from one abstract class.
@@ -34,7 +35,7 @@ namespace Exe_3_Inheritance
         // subclasses, the method should return all Animal properties.
         public virtual string Stats()
         {
-            return $"{Type} {Weight} {Color}";
+            return $"Type: {Type}, Weight: {Weight}, Color: {Color},";
         }
     }
 }
