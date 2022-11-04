@@ -10,10 +10,7 @@ namespace Exe_3_Inheritance
     {
         public Wolfman(string type, double weight, string color, int numberOfFangs) : base(type, weight, color, numberOfFangs)
         {
-            Type = type;
-            Weight = weight;
-            Color = color;
-            NumberOfFangs = numberOfFangs;
+            NumberOfFangs = numberOfFangs;  // I dont need to instantiate the properties (string type, double weight, string color) from the base class again!
         }
 
         public void Talk()

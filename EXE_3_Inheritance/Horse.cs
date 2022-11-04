@@ -7,14 +7,15 @@
         public Horse(string type, double weight, string color, int numberOfLegs)
             : base(type, weight, color)
         {
-            Type = type;
-            Weight= weight;
-            Color= color;
-            NumberOfLegs = numberOfLegs;
+            NumberOfLegs = numberOfLegs;    // I dont need to instantiate the properties (string type, double weight, string color) from the base class again!
         }
         public override void DoSound()
         {
             Console.WriteLine("Gnägg gnägg...");
+        }
+        public override string Stats()
+        {
+            return $"{base.Stats()} {NumberOfLegs}";
         }
     }
 }

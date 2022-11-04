@@ -6,15 +6,16 @@
         public Dog(string type, double weight, string color, string breed)
             : base(type, weight, color)
         {
-            Type = type;
-            Weight = weight;
-            Color = color;
-            Breed = breed;
+            Breed = breed;  // I dont need to instantiate the properties (string type, double weight, string color) from the base class again!
         }
 
         public override void DoSound()
         {
             Console.WriteLine("Woff woff..");
+        }
+        public override string Stats()
+        {
+            return $"{base.Stats()} {Breed}";
         }
     }
 }

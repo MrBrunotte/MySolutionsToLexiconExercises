@@ -29,5 +29,12 @@ namespace Exe_3_Inheritance
 
         // 2 Abstract method must be implemented in the abstract class that inherit from Animal
         public abstract void DoSound();
+
+        // 3.3 1) Create method Stats() with return type string and we should be able to override it in the
+        // subclasses, the method should return all Animal properties.
+        public virtual string Stats()
+        {
+            return $"{Type} {Weight} {Color}";
+        }
     }
 }

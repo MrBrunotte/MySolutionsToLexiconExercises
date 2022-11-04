@@ -6,15 +6,16 @@
         public Bird(string type, double weight, string color, int wingSpan)
             : base(type, weight, color)
         {
-            Type = type;
-            Weight = weight;
-            Color = color;
-            WingSpan = wingSpan;
+            WingSpan = wingSpan; // I dont need to instantiate the properties (string type, double weight, string color) from the base class again!
         }
 
         public override void DoSound()
         {
             Console.WriteLine("KvittElIkvitt");
+        }
+        public override string Stats()
+        {
+            return $"{base.Stats()} {WingSpan}";
         }
     }
 }

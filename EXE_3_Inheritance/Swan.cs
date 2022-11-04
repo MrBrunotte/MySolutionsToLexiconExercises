@@ -6,11 +6,11 @@
         public Swan(string type, double weight, string color, int wingSpan, string beekColor)
             : base(type, weight, color, wingSpan)
         {
-            Type = type;
-            Weight = weight;
-            Color = color;
-            WingSpan = wingSpan;
-            BeekColor = beekColor;
+            BeekColor = beekColor;  // I dont need to instantiate the properties (string type, double weight, string color) from the base class again!
+        }
+        public override string Stats()
+        {
+            return $"{base.Stats()} {BeekColor}";
         }
     }
 }

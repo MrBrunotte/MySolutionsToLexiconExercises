@@ -6,15 +6,16 @@
         public Hedgehog(string type, double weight, string color, int nrOfSpikes)
             : base(type, weight, color)
         {
-            Type = type;
-            Weight = weight;
-            Color = color;
-            NrOfSpikes = nrOfSpikes;
+            NrOfSpikes = nrOfSpikes;    // I dont need to instantiate the properties (string type, double weight, string color) from the base class again!
         }
 
         public override void DoSound()
         {
             Console.WriteLine("No sound!!");
+        }
+        public override string Stats()
+        {
+            return $"{base.Stats()} {NrOfSpikes}";
         }
     }
 }
