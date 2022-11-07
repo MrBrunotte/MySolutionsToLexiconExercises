@@ -64,15 +64,17 @@ using Exe_4_Stack_Heap;
 MyInt.ReturnValue();
 MyInt.ReturnValue2();
 
-Console.WriteLine("---- Övning 1 ----");
+Console.WriteLine("---- Övning 1 ----\n");
 while(true)
 {
-    Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.Write("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
         + "\n1. Examine a List"
         + "\n2. Examine a Queue"
         + "\n3. Examine a Stack"
         + "\n4. CheckParanthesis"
-        + "\n0. Exit the application");
+        + "\n0. Exit the application ");
+    Console.ResetColor();
     char input = ' '; //Creates the character input to be used with the switch-case below.
     try
     {
