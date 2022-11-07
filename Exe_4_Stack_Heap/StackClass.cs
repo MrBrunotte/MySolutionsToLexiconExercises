@@ -7,6 +7,18 @@
             */
     internal static void ExamineStack()
     {
-        throw new NotImplementedException();
+        var stackToReverse = new Stack<char>();
+        Console.WriteLine("nPlease enter a text of your choice, I will reverse it!");
+        string inputText = Console.ReadLine();
+        foreach(var character in inputText)
+        {
+            stackToReverse.Push(character);
+        }
+        inputText = string.Empty;
+        while(stackToReverse.Count > 0)
+        {
+            inputText += stackToReverse.Pop();
+        }
+        Console.WriteLine($"{inputText} <== it is reversed\n");
     }
 }

@@ -73,7 +73,7 @@ while(true)
         + "\n2. Examine a Queue"
         + "\n3. Examine a Stack"
         + "\n4. CheckParanthesis"
-        + "\n0. Exit the application ");
+        + "\n\n0. Exit the application \n");
     Console.ResetColor();
     char input = ' '; //Creates the character input to be used with the switch-case below.
     try
