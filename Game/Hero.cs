@@ -16,8 +16,9 @@
     - Game class som håller själva loopen
  */
 
-Game game = new Game();                     // Create new game
-Game.Run();                             // Start the game
-
-Console.WriteLine("Thanks for playing");
-Console.ReadKey();
+internal class Hero
+{
+    public Hero()
+    {
+    }
+}
