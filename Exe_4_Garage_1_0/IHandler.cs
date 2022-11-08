@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exe_5_Garage_1_0
 {
-    internal class Garage<T>
+    internal interface IHandler
     {
-        
+        void SetTextColor();
     }
 }
