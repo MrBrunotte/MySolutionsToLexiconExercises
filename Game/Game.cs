@@ -16,31 +16,56 @@
     - Game class som håller själva loopen
  */
 
-using System.Data;
-
 internal class Game
 {
-    private Map map;                // Create a Global map
+    private Map map;              // Create a Global map
     private Hero hero;       // Create a Global hero
 
-    internal static void Run()
+    internal void Run()
     {
         Initialize();
         Play();
     }
-
-    private static void Play()
+    // Draw map to play on
+    // Get command from user, move, pick up item etc
+    // Execute the comman from user
+    // Draw new map after execution
+    // Enemy Action
+    // Draw new map
+    private void Play()
     {
-        throw new NotImplementedException();
+        bool gameInProgress = true;
+        do
+        {
+            // Draw map
+            DrawMap();
+
+
+
+            Console.ReadKey();
+        } while(gameInProgress);
+    }
+
+    private void DrawMap()
+    {
+        for(int y = 0; y < map.Height; y++)
+        {
+            for(int x = 0; x < map.Width; x++)
+            {
+                Cell cell = map.GetCell(x, y);
+                Console.Write(cell.Symbol);
+            }
+            Console.WriteLine();
+        }
     }
 
     // Creates the object we need for the game
-    private static void Initialize()
+    private void Initialize()
     {
         // type Tasklist in search field
         // TODO: read from config
-        var map = new Map(width: 10, height: 10);
-        var hero = new Hero();
+        map = new Map(width: 10, height: 10);
+        hero = new Hero();
     }
 
 

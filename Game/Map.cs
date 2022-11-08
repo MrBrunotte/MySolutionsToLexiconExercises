@@ -1,14 +1,14 @@
 ﻿
 internal class Map
 {
-    private int width;
-    private int height;
-    private readonly Cell[ , ] cells;   // Instantiate the cells object in the map (the Array), they dont have any references
-
+    public int Width { get; }
+    public int Height { get; }
+    private readonly Cell[ , ] cells;   // Create a two-dimensional array for the map, private no access outsice Map clas
+    public List<Creature> Creatures { get; set; } = new List<Creature>(); // instantiera listan direkt
     public Map(int width, int height)
     {
-        this.width = width;
-        this.height = height;
+        Width = width;
+        Height = height;
 
         cells = new Cell[height, width]; // Create the cells object with keyword new
 
@@ -22,5 +22,11 @@ internal class Map
 
 
     }
-
+    /// <summary>
+    /// The method returns the cells y and x
+    /// </summary>
+    /// <param name="y"></param>
+    /// <param name="x"></param>
+    /// <returns></returns>
+    internal Cell GetCell(int y, int x) => cells[y, x];
 }

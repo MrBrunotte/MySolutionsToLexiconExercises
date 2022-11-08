@@ -16,9 +16,10 @@
     - Game class som håller själva loopen
  */
 
-internal class Hero
+internal class Hero : Creature
 {
-    public Hero()
+    public Hero(Cell cell) : base(cell, "H ")
     {
+        Color = ConsoleColor.Yellow; // override the default color from Creature
     }
 }

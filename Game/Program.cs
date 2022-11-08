@@ -17,7 +17,7 @@
  */
 
 Game game = new Game();                     // Create new game
-Game.Run();                             // Start the game
+game.Run();                             // Start the game
 
 Console.WriteLine("Thanks for playing");
 Console.ReadKey();
