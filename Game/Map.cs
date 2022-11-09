@@ -16,7 +16,7 @@ internal class Map
         {
             for(int x = 0; x < width; x++)
             {
-                cells[y, x] = new Cell();   // Create the cells object with y for height and x for width
+                cells[y, x] = new Cell(x, y);   // Create the cells object with y for height and x for width
             }
         }
     }
@@ -26,5 +26,17 @@ internal class Map
     /// <param name="y"></param>
     /// <param name="x"></param>
     /// <returns></returns>
-    internal Cell GetCell(int y, int x) => cells[y, x];
+    internal Cell GetCell(int y, int x)
+    {
+        //TODO Refactor: remove return null and add code
+        try
+        {
+            return cells[y, x];
+
+        }
+        catch(Exception)
+        {
+            return null;
+        }
+    }
 }
