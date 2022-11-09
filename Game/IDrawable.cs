@@ -1,9 +1,11 @@
 ﻿public interface IDrawable
 {
-    // minsta gemensama nämnaren som Creature och Hero har och de ska skrivas ut så vi använder oss av ett interface.
-    // detta interface säger att alla som använder detta interface måste ha:
-    // - en färg med get och sett
-    // - en symbol med get
+    /*
+     * Vi har detta interface för att vi ska kunna gruppera saker som inte har med varandra att göra men de har gemensamma nämnare som 
+     * - Color
+     * - Symbol
+     * Alla som använder detta interface måste ha både color och symbol som property
+     */
     ConsoleColor Color { get; set; }
     string Symbol { get; }
 }

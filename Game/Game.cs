@@ -55,59 +55,37 @@ internal class Game
         switch(keyPressed)
         {
             case ConsoleKey.LeftArrow:
-                Move(hero.Cell.Y, hero.Cell.X - 1);
+                Move(Direction.West);
                 break;
             case ConsoleKey.RightArrow:
-                Move(hero.Cell.Y, hero.Cell.X + 1);
+                Move(Direction.East);
                 break;
             case ConsoleKey.UpArrow:
-                Move(hero.Cell.Y - 1, hero.Cell.X);
+                Move(Direction.North);
                 break;
             case ConsoleKey.DownArrow:
-                Move(hero.Cell.Y + 1, hero.Cell.X);
+                Move(Direction.South);
                 break;
 
             default:
                 break;
         }
-
     }
 
-    private void Move(int y, int x)
+    private void Move(Position movement)
     {
-        var newPosition = map.GetCell(y, x);
+        Position newPosition = hero.Cell.Position + movement;
+        Cell newCell = map.GetCell(newPosition);
         if(newPosition != null)
         {
-            hero.Cell = newPosition;
+            hero.Cell = newCell;
         }
     }
 
     private void DrawMap()
     {
         UI.Clear();
-
-        for(int y = 0; y < map.Height; y++)
-        {
-            for(int x = 0; x < map.Width; x++)
-            {
-                Cell cell = map.GetCell(y, x);          // frågar kartan efter en cell och lägger den i cell
-
-                IDrawable drawable = cell;              // Cell ärver från IDrawable, så vi sätter cell som IDrawable
-
-                foreach(var creature in map.Creatures)  // loopar igenom och kollar om en cell innehåller en creature
-                {                                       // skriv ut den om cellen är en creature (Hero ärver från Creature)
-                    if(creature.Cell == cell)           // Om creature.Cell är samma som cell (om der reffererar till samma object)
-                    {
-                        drawable = creature;            // Då skriver vi över cellen med en creature (Hero eller monster)
-                        break;
-                    }
-                }
-                Console.ForegroundColor = drawable?.Color ?? ConsoleColor.White; // if drawable is null set color from IDrawable otherwise set color white.
-                Console.Write(drawable?.Symbol);
-            }
-            Console.WriteLine();
-        }
-        Console.ResetColor();
+        UI.Draw(map);
     }
 
     // Creates the object we need for the game
@@ -115,12 +93,9 @@ internal class Game
     {
         // type Tasklist in search field
         // TODO: read from config
-        map = new Map(width: 10, height: 10);
-        var heroCell = map.GetCell(0,0);
-        hero = new Hero(heroCell);
-        map.Creatures.Add(hero);
+        map = new Map(width: 10, height: 10);       // skapa upp en ny karta med Widht och Height
+        var heroCell = map.GetCell(0,0);            // skapa en cell där hero ska starta ifrån med kordinaterna 0,0
+        hero = new Hero(heroCell);                  // skapa ett nytt Hero object hero ohc skickar in vilken cell han befinner sig på (heroCell = 0,0)
+        map.Creatures.Add(hero);                    // Lägg till hero till listan Creatures i Map.cs
     }
-
-
-
 }

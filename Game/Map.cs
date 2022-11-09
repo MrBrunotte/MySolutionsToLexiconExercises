@@ -16,7 +16,7 @@ internal class Map
         {
             for(int x = 0; x < width; x++)
             {
-                cells[y, x] = new Cell(x, y);   // Create the cells object with y for height and x for width
+                cells[y, x] = new Cell(new Position(y, x));   // Create the cells object with y for height and x for width
             }
         }
     }
@@ -28,15 +28,12 @@ internal class Map
     /// <returns></returns>
     internal Cell GetCell(int y, int x)
     {
-        //TODO Refactor: remove return null and add code
-        try
-        {
-            return cells[y, x];
+        if(x < 0 || x >= Width || y < 0 || y >= Height) return null;
+        return cells[y, x];
+    }
 
-        }
-        catch(Exception)
-        {
-            return null;
-        }
+    internal Cell GetCell(Position newPosition)
+    {
+        return GetCell(newPosition.Y, newPosition.X);
     }
 }
