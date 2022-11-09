@@ -19,8 +19,6 @@ internal class Map
                 cells[y, x] = new Cell();   // Create the cells object with y for height and x for width
             }
         }
-
-
     }
     /// <summary>
     /// The method returns the cells y and x

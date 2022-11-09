@@ -26,12 +26,14 @@ internal class Game
         Initialize();
         Play();
     }
-    // Draw map to play on
-    // Get command from user, move, pick up item etc
-    // Execute the comman from user
-    // Draw new map after execution
-    // Enemy Action
-    // Draw new map
+
+    // Play()
+    //  Draw map to play on
+    //  Get command from user, move, pick up item etc
+    //  Execute the comman from user
+    //  Draw new map after execution
+    //  Enemy Action
+    //  Draw new map etc...
     private void Play()
     {
         bool gameInProgress = true;
@@ -65,7 +67,8 @@ internal class Game
         // type Tasklist in search field
         // TODO: read from config
         map = new Map(width: 10, height: 10);
-        hero = new Hero();
+        var heroCell = map.GetCell(0,0);
+        hero = new Hero(heroCell);
     }
 
 
