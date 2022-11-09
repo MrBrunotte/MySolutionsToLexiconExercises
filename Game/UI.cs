@@ -34,16 +34,7 @@ internal static class UI
                 Cell cell = map.GetCell(y, x);          // frågar kartan efter en cell och lägger den i cell
 
                 IDrawable drawable = map.Creatures.CreatureAtExtension(cell) ?? cell;  // Cant get this to work with the Extension class
-                //IDrawable drawable = cell;              // Cast cell to an IDrawabel. Cell ärver från IDrawable, så vi sätter cell som IDrawable
-
-                //foreach(var creature in map.Creatures)  // loopar igenom och kollar om en cell innehåller en creature
-                //{                                       // skriv ut den om cellen är en creature (Hero ärver från Creature)
-                //    if(creature.Cell == cell)           // Om creature.Cell är samma som cell (om der reffererar till samma object)
-                //    {
-                //        drawable = creature;            // Då skriver vi över cellen med en creature (Hero eller monster)
-                //        break;
-                //    }
-                //}
+                
                 Console.ForegroundColor = drawable?.Color ?? ConsoleColor.White; // if drawable is null set color from IDrawable otherwise set color white.
                 Console.Write(drawable?.Symbol);
             }

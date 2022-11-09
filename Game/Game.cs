@@ -76,7 +76,7 @@ internal class Game
     {
         Position newPosition = hero.Cell.Position + movement;
         Cell newCell = map.GetCell(newPosition);
-        if(newPosition != null)
+        if(newCell != null)
         {
             hero.Cell = newCell;
         }
