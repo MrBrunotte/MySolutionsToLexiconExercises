@@ -20,6 +20,11 @@ internal class Map
             }
         }
     }
+    internal IDrawable? CreatureAt(Cell cell)
+    {
+        return Creatures.FirstOrDefault(creature => creature.Cell == cell);
+    }
+
     /// <summary>
     /// The method returns the cells y and x
     /// </summary>
@@ -36,4 +41,5 @@ internal class Map
     {
         return GetCell(newPosition.Y, newPosition.X);
     }
+
 }

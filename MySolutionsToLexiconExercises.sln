@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestMyKnowledge", "TestMyKn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exe_4_Stack_Heap", "Exe_4_Stack_Heap\Exe_4_Stack_Heap.csproj", "{8D036105-6752-4E71-A633-1775E04680CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exe_5_Garage_1_0", "Exe_4_Garage_1_0\Exe_5_Garage_1_0.csproj", "{8AC6DE4F-DA31-4C54-8ADA-086F3B7FDED0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exe_5_Garage_1_0", "Exe_4_Garage_1_0\Exe_5_Garage_1_0.csproj", "{8AC6DE4F-DA31-4C54-8ADA-086F3B7FDED0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{BFAD0BE8-E86F-48A8-93FC-5EC856220107}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game", "Game\Game.csproj", "{BFAD0BE8-E86F-48A8-93FC-5EC856220107}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game_LimitedList", "Game_LimitedList\Game_LimitedList.csproj", "{F68034F8-F13E-4E0B-A47C-7B5B5774AC8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{BFAD0BE8-E86F-48A8-93FC-5EC856220107}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFAD0BE8-E86F-48A8-93FC-5EC856220107}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFAD0BE8-E86F-48A8-93FC-5EC856220107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F68034F8-F13E-4E0B-A47C-7B5B5774AC8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68034F8-F13E-4E0B-A47C-7B5B5774AC8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68034F8-F13E-4E0B-A47C-7B5B5774AC8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68034F8-F13E-4E0B-A47C-7B5B5774AC8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
