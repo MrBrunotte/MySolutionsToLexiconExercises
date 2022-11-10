@@ -33,8 +33,7 @@ internal static class UI
             {
                 Cell cell = map.GetCell(y, x);          // frågar kartan efter en cell och lägger den i cell
 
-                IDrawable drawable = map.CreatureAt(cell) ?? cell;  // samething as below but with an Extensions class
-                //IDrawable drawable = map.Creatures.CreatureAtExtension(cell) ?? cell;  // Cant get this to work with the Extension class
+                IDrawable drawable = map.CreatureAt(cell) ?? (IDrawable)cell.Items.FirstOrDefault() ?? cell;  // We must cast cell to IDrawable
 
                 Console.ForegroundColor = drawable?.Color ?? ConsoleColor.White; // if drawable is null set color from IDrawable otherwise set color white.
                 Console.Write(drawable?.Symbol);
@@ -42,6 +41,14 @@ internal static class UI
             Console.WriteLine();
         }
         Console.ResetColor();
+        PrintDebriviations();
+    }
+
+    private static void PrintDebriviations()
+    {
+        Console.WriteLine("H = Hero\n" +
+                          "c = Coin\n" +
+                          "t = Torch");
     }
 
     internal static ConsoleKey GetKey()

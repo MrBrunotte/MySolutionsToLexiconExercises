@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game", "Game\Game.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game_LimitedList", "Game_LimitedList\Game_LimitedList.csproj", "{F68034F8-F13E-4E0B-A47C-7B5B5774AC8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YieldReturn_game_video_5", "YieldReturn_game_video_5\YieldReturn_game_video_5.csproj", "{B091C05B-65F5-4AF1-850C-503F7B992281}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game_YieldReturn_video5", "YieldReturn_game_video_5\Game_YieldReturn_video5.csproj", "{B091C05B-65F5-4AF1-850C-503F7B992281}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

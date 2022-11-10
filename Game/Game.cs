@@ -66,10 +66,31 @@ internal class Game
             case ConsoleKey.DownArrow:
                 Move(Direction.South);
                 break;
-
+            case ConsoleKey.P:
+                PickUp();
+                break;
+            case ConsoleKey.I:
+                Inventory();
+                break;
+            case ConsoleKey.Q:
+                Environment.Exit(0);
+                break;
             default:
                 break;
         }
+    }
+
+    private void Inventory()
+    {
+        foreach(var item in hero.BackPack)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+    private void PickUp()
+    {
+        throw new NotImplementedException();
     }
 
     private void Move(Position movement)
@@ -97,5 +118,11 @@ internal class Game
         var heroCell = map.GetCell(0,0);            // skapa en cell där hero ska starta ifrån med kordinaterna 0,0
         hero = new Hero(heroCell);                  // skapa ett nytt Hero object hero ohc skickar in vilken cell han befinner sig på (heroCell = 0,0)
         map.Creatures.Add(hero);                    // Lägg till hero till listan Creatures i Map.cs
+
+        //TODO random position of items
+        map.GetCell(3, 3).Items.Add(Item.Coin());
+        map.GetCell(0, 8).Items.Add(Item.Coin());
+        map.GetCell(7, 4).Items.Add(Item.Torch());
+        map.GetCell(8, 7).Items.Add(Item.Torch());
     }
 }
