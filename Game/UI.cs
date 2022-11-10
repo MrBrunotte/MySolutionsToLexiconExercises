@@ -16,8 +16,25 @@
     - Game class som håller själva loopen
  */
 
+using Game_LimitedList;
+using System.Runtime.CompilerServices;
+
 internal static class UI
 {
+    private static MessageLog<string> messageLog = new MessageLog<string>(6);
+
+    public static void AddMessage(string message) => messageLog.Add(message);
+    public static void PrintLog()
+    {
+        Console.WriteLine($"\nMessage log!");
+        foreach(var item in messageLog)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(item);
+            Console.ResetColor();
+        }
+    }
+
     internal static void Clear()
     {
         Console.Clear();
@@ -41,10 +58,10 @@ internal static class UI
             Console.WriteLine();
         }
         Console.ResetColor();
-        PrintDebriviations();
+        PrintAbbreviations();
     }
 
-    private static void PrintDebriviations()
+    private static void PrintAbbreviations()
     {
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("H = Hero");

@@ -6,7 +6,7 @@ namespace Game_LimitedList
     {
 
         private readonly int Capacity;
-        private readonly List<T> list;
+        protected readonly List<T> list;    // With protected the list is reachable to all inheriting classes
         public LimitedList(int capacity)
         {
             this.Capacity = Math.Max(0, capacity);  // sett capacity till 0 eller capacity
