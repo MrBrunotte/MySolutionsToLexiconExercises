@@ -20,6 +20,6 @@ public class Item : IDrawable
 
     public override string ToString() => name;
 
-    public static Item Coin() => new Item("c ", ConsoleColor.Yellow, "Coin");
+    public static Item Coin() => new Item("c ", ConsoleColor.White, "Coin");
     public static Item Torch() => new Item("t ", ConsoleColor.Blue, "Torch");
 }

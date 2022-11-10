@@ -46,9 +46,13 @@ internal static class UI
 
     private static void PrintDebriviations()
     {
-        Console.WriteLine("H = Hero\n" +
-                          "c = Coin\n" +
-                          "t = Torch");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("H = Hero");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("c = Coin");
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine("t = Torch");
+        Console.ResetColor();
     }
 
     internal static ConsoleKey GetKey()
