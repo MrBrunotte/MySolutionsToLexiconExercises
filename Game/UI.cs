@@ -23,16 +23,21 @@ internal static class UI
 {
     private static MessageLog<string> messageLog = new MessageLog<string>(6);
 
-    public static void AddMessage(string message) => messageLog.Add(message);
+    public static void AddMessage(string message)
+    {
+        messageLog.Add(message);
+    }
+
     public static void PrintLog()
     {
-        Console.WriteLine($"\nMessage log!");
-        foreach(var item in messageLog)
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(item);
-            Console.ResetColor();
-        }
+        messageLog.ActionAll(m => Console.WriteLine(m));
+        //Console.WriteLine($"\nMessage log!");
+        //foreach(var item in messageLog)
+        //{
+        //    Console.ForegroundColor = ConsoleColor.Red;
+        //    Console.WriteLine(item);
+        //    Console.ResetColor();
+        //}
     }
 
     internal static void Clear()
@@ -52,7 +57,7 @@ internal static class UI
 
                 IDrawable drawable = map.CreatureAt(cell) ?? (IDrawable)cell.Items.FirstOrDefault() ?? cell;  // We must cast cell to IDrawable
 
-                Console.ForegroundColor = drawable?.Color ?? ConsoleColor.White; // if drawable is null set color from IDrawable otherwise set color white.
+                Console.ForegroundColor = drawable?.Color ?? ConsoleColor.White; // if drawable is null set color white, if not null set Color.
                 Console.Write(drawable?.Symbol);
             }
             Console.WriteLine();
@@ -75,5 +80,26 @@ internal static class UI
     internal static ConsoleKey GetKey()
     {
         return Console.ReadKey(intercept: true).Key;  // intercept: true betyder att vi ska bara returnera vilken key som tryckts, vi behöver inte skriva ut den.
+    }
+
+    internal static void PrintStats(string stats)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(stats);
+        Console.ResetColor();
+    }
+
+    internal static void GameInstructions()
+    {
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.WriteLine("--- Welcome to the HERO game ---\n" +
+                          "Up arrow\tMove up\n" +
+                          "Down arrow\tMove down\n" +
+                          "Left arrow\tMove left\n" +
+                          "Right arrow\tMove right\n\n" +
+                          "Press key: P\tPick up item\n" +
+                          "Press key: I\tPrint inventory");
+        Console.WriteLine("-------------------------------\n");
+        Console.ResetColor();
     }
 }

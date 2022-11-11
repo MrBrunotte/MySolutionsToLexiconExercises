@@ -21,7 +21,7 @@ using Game_LimitedList;
 internal class Hero : Creature
 {
     public LimitedList<Item> BackPack { get; set; }
-    public Hero(Cell cell) : base(cell, "H ")
+    public Hero(Cell cell) : base(cell, "H ", 100)
     {
         Color = ConsoleColor.Yellow;                // override the default color from Creature
         BackPack = new LimitedList<Item>(3);        // instantiate a new BackPack in constructor with capacity 3 from LimitedList.cs

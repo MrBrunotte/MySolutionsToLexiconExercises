@@ -32,6 +32,8 @@ namespace Game_LimitedList
 
         public bool Remove(T item) => list.Remove(item);
 
+
+
         public T this[ int index] => list[index];
         public IEnumerator<T> GetEnumerator()
         {
@@ -42,6 +44,11 @@ namespace Game_LimitedList
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        public void ActionAll(Action<T> action)
+        {
+            list.ForEach(m => action?.Invoke(m));
+        }
 
     }
 }

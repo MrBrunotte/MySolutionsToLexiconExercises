@@ -29,14 +29,6 @@ internal class Game
         Initialize();
         Play();
     }
-
-    // Play()
-    //  Draw map to play on
-    //  Get command from user, move, pick up item etc
-    //  Execute the comman from user
-    //  Draw new map after execution
-    //  Enemy Action
-    //  Draw new map etc...
     private void Play()
     {
         bool gameInProgress = true;
@@ -69,17 +61,29 @@ internal class Game
             case ConsoleKey.DownArrow:
                 Move(Direction.South);
                 break;
-            case ConsoleKey.P:
-                PickUp();
-                break;
-            case ConsoleKey.I:
-                Inventory();
-                break;
+            //case ConsoleKey.P:        // Se actionMény nedan
+            //    PickUp();
+            //    break;
+            //case ConsoleKey.I:
+            //    Inventory();
+            //    break;
             case ConsoleKey.Q:
                 Environment.Exit(0);
                 break;
             default:
                 break;
+        }
+
+        // se Delegates här passar vi in en Type och en Action (dvs en metod). Action returnerar ingenting och har inga parametrar.
+        var actionMeny = new Dictionary<ConsoleKey, Action>()
+        {
+            { ConsoleKey.P, PickUp },
+            { ConsoleKey.I, Inventory }
+        };
+        if(actionMeny.ContainsKey(keyPressed))
+        {
+            var method = actionMeny[keyPressed];
+            method?.Invoke();
         }
     }
 
@@ -98,7 +102,7 @@ internal class Game
     {
         if(hero.BackPack.IsFull)
         {
-            UI.AddMessage("Backpack is full");
+            UI.AddMessage("\nBackpack is full");
             return;
         }
 
@@ -108,7 +112,7 @@ internal class Game
             return;
         if(hero.BackPack.Add(item))
         {
-            UI.AddMessage($"Hero picked up: {item}");
+            UI.AddMessage($"\nHero picked up: {item}");
             items.Remove(item);
         }
     }
@@ -126,7 +130,10 @@ internal class Game
     private void DrawMap()
     {
         UI.Clear();
+        UI.GameInstructions();
         UI.Draw(map);
+        UI.PrintStats($"\nHealth: {hero.Health}\nEnemies left: {map.Creatures.Count}\n");
+        UI.PrintLog();
     }
 
     // Creates the object we need for the game
