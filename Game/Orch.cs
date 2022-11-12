@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game
+internal class Orch : Creature
 {
-    internal class Orch : Creature
+    public Orch(Cell cell, int maxHealth)
+        : base(cell, "O ", 50)
     {
-        public Orch(Cell cell, int maxHealth)
-            : base(cell, "O ", 50)
-        {
-            Damage = 25;
-            Color = ConsoleColor.Green;
-        }
+        Damage = 25;
+        Color = ConsoleColor.Green;
     }
 }

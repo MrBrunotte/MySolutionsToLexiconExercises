@@ -16,7 +16,7 @@
     - Game class som håller själva loopen
  */
 
-using System.Net.Http.Headers;
+
 using System.Text;
 
 internal class Game
@@ -112,7 +112,7 @@ internal class Game
             return;
         if(hero.BackPack.Add(item))
         {
-            UI.AddMessage($"\nHero picked up: {item}");
+            UI.AddMessage($"Hero picked up: {item}");
             items.Remove(item);
         }
     }

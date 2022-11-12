@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-internal class Goblin : Creature
+namespace ExtensionMethodsLinq
 {
-    public Goblin(Cell cell, int maxHealth)
-        : base(cell, "G ", 30)
+    class EmpDto
     {
-        Damage = 15;
+        public string Name { get; set; }
+        public int NamesLength { get; set; }
     }
 }
